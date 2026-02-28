@@ -1019,3 +1019,29 @@ img {
         gap: 2.5rem;
     }
 }
+/* =========================================
+   iPhone / Small Mobile (max-width: 480px)
+   ========================================= */
+@media (max-width: 480px) {
+    html { font-size: 14px; }
+    .container { padding: 0 1rem; }
+    .brand-text { font-size: 1.4rem; }
+    .brand-subtext { font-size: 0.6rem; }
+    .brand-logo img { height: 40px; }
+    .hero { height: auto; min-height: 420px; padding: 6rem 0 3rem; }
+    .hero-title { font-size: 2rem; }
+    .hero-actions { flex-direction: column; gap: 0.8rem; align-items: stretch; }
+    .hero-actions .btn { text-align: center; width: 100%; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .event-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .event-card img { width: 100% !important; height: 180px !important; }
+    .donate-wrapper { grid-template-columns: 1fr; }
+    .donate-form-card { padding: 1.5rem 1.2rem; }
+    .donation-amounts { gap: 0.4rem; }
+    .amount-btn { font-size: 0.85rem; padding: 0.5rem 0; }
+    .form-row { grid-template-columns: 1fr; }
+    .section-title { font-size: 1.8rem; }
+    .blockquote { font-size: 1.4rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer { padding: 3rem 0 0; }
+}
