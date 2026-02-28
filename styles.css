@@ -553,6 +553,19 @@ img {
     transform: translateY(-2px);
 }
 
+.btn-sm {
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+}
+
+.event-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+}
+
 /* Donation Section */
 .donate-section {
     background-color: var(--color-bg-alt, #f8f6f2);
