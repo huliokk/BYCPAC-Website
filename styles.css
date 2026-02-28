@@ -29,8 +29,10 @@
     --container-max-width: 1200px;
     --transition-slow: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     --transition-fast: 0.3s ease;
+    --border-radius: 8px;
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
+    --color-border: #e0ddd8;
 
     /* Shadows */
     --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
