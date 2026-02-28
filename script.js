@@ -102,3 +102,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- Donation Form ---
+function setAmount(val) {
+    document.getElementById('donationAmount').value = val;
+    document.querySelectorAll('.amount-btn').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.textContent.replace('$', '')) === val);
+    });
+}
+
+function formatCardNumber(input) {
+    let value = input.value.replace(/\D/g, '').substring(0, 16);
+    input.value = value.replace(/(.{4})/g, '$1 ').trim();
+}
+
+function formatExpiry(input) {
+    let value = input.value.replace(/\D/g, '').substring(0, 4);
+    if (value.length >= 2) value = value.substring(0, 2) + ' / ' + value.substring(2);
+    input.value = value;
+}
+
+function handleDonation(event) {
+    event.preventDefault();
+    const amount = document.getElementById('donationAmount').value;
+    const btn = event.target.querySelector('.donate-submit');
+    btn.textContent = 'Processing...';
+    btn.disabled = true;
+    setTimeout(() => {
+        btn.textContent = '✓ Thank You for Your Donation!';
+        btn.style.backgroundColor = '#2ecc71';
+        event.target.reset();
+        document.getElementById('donationAmount').value = 100;
+    }, 1500);
+}
