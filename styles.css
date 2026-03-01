@@ -799,6 +799,61 @@ body.lang-zh .nav-links a:not(.btn) .lang-en {
     }
 }
 
+/* =========================================
+   Online Store Section
+   ========================================= */
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.store-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+    display: flex;
+    flex-direction: column;
+}
+
+.store-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.store-img-placeholder {
+    height: 160px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.store-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.store-card-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+.store-card-content p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    flex: 1;
+}
+
 /* Events Section */
 .events-grid {
     display: flex;
@@ -1099,6 +1154,7 @@ body.lang-zh .nav-links a:not(.btn) .lang-en {
     .hero-actions { flex-direction: column; gap: 0.8rem; align-items: stretch; }
     .hero-actions .btn { text-align: center; width: 100%; }
     .cards-grid { grid-template-columns: 1fr; }
+    .store-grid { grid-template-columns: 1fr; }
     .event-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .event-card img { width: 100% !important; height: 180px !important; }
     .donate-wrapper { grid-template-columns: 1fr; }
