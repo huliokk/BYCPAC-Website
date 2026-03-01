@@ -135,3 +135,20 @@ function handleDonation(event) {
         document.getElementById('donationAmount').value = 100;
     }, 1500);
 }
+
+// ---- Language Toggle ----
+(function () {
+    const langToggle = document.getElementById('langToggle');
+    if (!langToggle) return;
+
+    langToggle.addEventListener('click', () => {
+        const isEn = document.body.classList.contains('lang-en');
+        if (isEn) {
+            document.body.classList.replace('lang-en', 'lang-zh');
+            localStorage.setItem('bycpac-lang', 'zh');
+        } else {
+            document.body.classList.replace('lang-zh', 'lang-en');
+            localStorage.setItem('bycpac-lang', 'en');
+        }
+    });
+})();

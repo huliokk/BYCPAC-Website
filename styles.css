@@ -41,6 +41,29 @@
 }
 
 /* =========================================
+   Dual Language Toggle
+   ========================================= */
+body.lang-en .lang-zh { display: none !important; }
+body.lang-zh .lang-en { display: none !important; }
+
+.lang-toggle-btn {
+    background: rgba(26, 38, 57, 0.08);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+.lang-toggle-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* =========================================
    Reset & Base
    ========================================= */
 * {
@@ -308,6 +331,32 @@ img {
     display: flex;
     align-items: center;
     gap: 2rem;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+/* Keep each nav item the same width in both languages by stacking spans */
+.nav-links a:not(.btn) .lang-zh,
+.nav-links a:not(.btn) .lang-en {
+    display: block;
+}
+
+.nav-links a:not(.btn) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hidden lang span still reserves space via visibility trick */
+body.lang-en .nav-links a:not(.btn) .lang-zh,
+body.lang-zh .nav-links a:not(.btn) .lang-en {
+    display: block !important;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
 }
 
 .nav-links a:not(.btn) {

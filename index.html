@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome for Icons -->
@@ -19,6 +19,12 @@
 </head>
 
 <body>
+    <script>
+        (function () {
+            const lang = localStorage.getItem('bycpac-lang') || 'en';
+            document.body.classList.add('lang-' + lang);
+        })();
+    </script>
     <!-- Top Bar (Optional: for address/quick contact) -->
     <div class="top-bar">
         <div class="container top-bar-inner">
@@ -34,21 +40,30 @@
                 <img src="assets/logo2.png" alt="BYCPAC Logo">
                 <div class="brand-name">
                     <span class="brand-text">BYCPAC</span>
-                    <span class="brand-subtext">Bing Yang Chinese Performing Art Center</span>
+                    <span class="brand-subtext">
+                        <span class="lang-en">Bing Yang Chinese<br>Performing Art Center</span>
+                        <span class="lang-zh">冰杨中国表演艺术中心<br>&nbsp;</span>
+                    </span>
                 </div>
             </a>
 
-            <button class="mobile-menu-btn" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div style="display:flex; align-items:center; gap:10px;">
+                <button id="langToggle" class="lang-toggle-btn" aria-label="Toggle Language">
+                    <span class="lang-en">中文</span>
+                    <span class="lang-zh">EN</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
 
             <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#classes">Classes</a></li>
-                <li><a href="#performances">Performances</a></li>
-                <li><a href="#donate" class="btn btn-donate">Donate</a></li>
-                <li><a href="#contact" class="btn btn-outline">Contact Us</a></li>
+                <li><a href="#home" class="active"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+                <li><a href="#about"><span class="lang-en">About</span><span class="lang-zh">关于</span></a></li>
+                <li><a href="#classes"><span class="lang-en">Classes</span><span class="lang-zh">课程</span></a></li>
+                <li><a href="#performances"><span class="lang-en">Performances</span><span class="lang-zh">演出</span></a></li>
+                <li><a href="#donate" class="btn btn-donate"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a></li>
+                <li><a href="#contact" class="btn btn-outline"><span class="lang-en">Contact Us</span><span class="lang-zh">联系我们</span></a></li>
             </ul>
         </div>
     </nav>
@@ -58,13 +73,27 @@
         style="background: linear-gradient(135deg, rgba(26,38,57,0.85) 0%, rgba(26,38,57,0.95) 100%), url('assets/background1.jpg') center/cover no-repeat;">
         <div class="hero-overlay"></div>
         <div class="hero-content container">
-            <h4 class="hero-subtitle animate-fade-in">Discover the Elegance of Movement</h4>
-            <h1 class="hero-title animate-fade-in delay-1">Preserving Tradition, Inspiring the Future</h1>
-            <p class="hero-desc animate-fade-in delay-2">Join us at the Bing Yang Chinese Performing Art Center to
-                explore the rich heritage of Chinese dance, music, and theater.</p>
+            <h4 class="hero-subtitle animate-fade-in">
+                <span class="lang-en">Discover the Elegance of Movement</span>
+                <span class="lang-zh">探索舞动之美</span>
+            </h4>
+            <h1 class="hero-title animate-fade-in delay-1">
+                <span class="lang-en">Preserving Tradition, Inspiring the Future</span>
+                <span class="lang-zh">传承传统，启迪未来</span>
+            </h1>
+            <p class="hero-desc animate-fade-in delay-2">
+                <span class="lang-en">Join us at the Bing Yang Chinese Performing Art Center to explore the rich heritage of Chinese dance, music, and theater.</span>
+                <span class="lang-zh">欢迎来到冰扬中国表演艺术中心，探索中国舞蹈、音乐与戏剧的丰富文化遗产。</span>
+            </p>
             <div class="hero-actions animate-fade-in delay-3">
-                <a href="#classes" class="btn btn-primary">Explore Our Classes</a>
-                <a href="#performances" class="btn btn-secondary">Upcoming Shows <i class="fas fa-arrow-right"></i></a>
+                <a href="#classes" class="btn btn-primary">
+                    <span class="lang-en">Explore Our Classes</span>
+                    <span class="lang-zh">探索课程</span>
+                </a>
+                <a href="#performances" class="btn btn-secondary">
+                    <span class="lang-en">Upcoming Shows <i class="fas fa-arrow-right"></i></span>
+                    <span class="lang-zh">即将演出 <i class="fas fa-arrow-right"></i></span>
+                </a>
             </div>
         </div>
     </header>
@@ -73,16 +102,23 @@
     <section id="about" class="section about-section">
         <div class="container about-grid">
             <div class="about-text scroll-reveal">
-                <h2 class="section-title">A Legacy of Artistic Excellence</h2>
+                <h2 class="section-title">
+                    <span class="lang-en">A Legacy of Artistic Excellence</span>
+                    <span class="lang-zh">艺术卓越的传承</span>
+                </h2>
                 <div class="separator"></div>
-                <p>Welcome to BYCPAC. For about two decades, we have been dedicated to the promotion and preservation of
-                    traditional Chinese performing arts. Our academy offers a comprehensive curriculum designed for
-                    students of all ages and skill levels.</p>
-                <p>Through rigorous training in classical dance, folk styles, and traditional instruments, we aim to
-                    nurture not just performers, but cultural ambassadors who carry our heritage forward into the modern
-                    world.</p>
-                <a href="#" class="link-arrow">Learn more about our history <i
-                        class="fas fa-long-arrow-alt-right"></i></a>
+                <p>
+                    <span class="lang-en">Welcome to BYCPAC. For about two decades, we have been dedicated to the promotion and preservation of traditional Chinese performing arts. Our academy offers a comprehensive curriculum designed for students of all ages and skill levels.</span>
+                    <span class="lang-zh">欢迎来到BYCPAC。近二十年来，我们致力于推广和传承中国传统表演艺术。我们的学院提供适合各年龄段和水平学生的全面课程体系。</span>
+                </p>
+                <p>
+                    <span class="lang-en">Through rigorous training in classical dance, folk styles, and traditional instruments, we aim to nurture not just performers, but cultural ambassadors who carry our heritage forward into the modern world.</span>
+                    <span class="lang-zh">通过严格的古典舞蹈、民族风格及传统乐器训练，我们不仅培养表演者，更培育将中华文化传承至现代世界的文化使者。</span>
+                </p>
+                <a href="#" class="link-arrow">
+                    <span class="lang-en">Learn more about our history <i class="fas fa-long-arrow-alt-right"></i></span>
+                    <span class="lang-zh">了解更多我们的历史 <i class="fas fa-long-arrow-alt-right"></i></span>
+                </a>
             </div>
             <div class="about-image-wrapper scroll-reveal">
                 <div class="image-placeholder image-elegant-1">
@@ -95,11 +131,13 @@
     <!-- Classes/Programs Section -->
     <section id="classes" class="section classes-section bg-light">
         <div class="container center-text">
-            <h4 class="section-subtitle">Our Academy</h4>
-            <h2 class="section-title">Programs & Classes</h2>
+            <h4 class="section-subtitle"><span class="lang-en">Our Academy</span><span class="lang-zh">我们的学院</span></h4>
+            <h2 class="section-title"><span class="lang-en">Programs & Classes</span><span class="lang-zh">课程与项目</span></h2>
             <div class="separator mx-auto"></div>
-            <p class="section-desc mx-auto">Whether you are taking your first steps or perfecting advanced techniques,
-                we have a program tailored for your journey.</p>
+            <p class="section-desc mx-auto">
+                <span class="lang-en">Whether you are taking your first steps or perfecting advanced techniques, we have a program tailored for your journey.</span>
+                <span class="lang-zh">无论您是初学者还是正在精进高级技巧，我们都有适合您的专属课程。</span>
+            </p>
 
             <div class="cards-grid mt-4">
                 <!-- Card 1 -->
@@ -109,10 +147,12 @@
                             alt="Classical Chinese Dance" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="card-content">
-                        <h3>Classical Chinese Dance</h3>
-                        <p>Master the intricate movements, leaps, and tumbling techniques that define this ancient art
-                            form.</p>
-                        <a href="#" class="link-arrow">Class details <i class="fas fa-long-arrow-alt-right"></i></a>
+                        <h3><span class="lang-en">Classical Chinese Dance</span><span class="lang-zh">中国古典舞</span></h3>
+                        <p>
+                            <span class="lang-en">Master the intricate movements, leaps, and tumbling techniques that define this ancient art form.</span>
+                            <span class="lang-zh">掌握古典舞的精妙动作、跳跃与翻腾技巧，感受这门古老艺术的魅力。</span>
+                        </p>
+                        <a href="#" class="link-arrow"><span class="lang-en">Class details <i class="fas fa-long-arrow-alt-right"></i></span><span class="lang-zh">课程详情 <i class="fas fa-long-arrow-alt-right"></i></span></a>
                     </div>
                 </div>
                 <!-- Card 2 -->
@@ -122,10 +162,12 @@
                             alt="Ethnic and Folk Dance" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="card-content">
-                        <h3>Ethnic & Folk Dance</h3>
-                        <p>Explore the diverse cultural expressions from various regions and ethnic groups across China.
+                        <h3><span class="lang-en">Ethnic & Folk Dance</span><span class="lang-zh">民族民间舞</span></h3>
+                        <p>
+                            <span class="lang-en">Explore the diverse cultural expressions from various regions and ethnic groups across China.</span>
+                            <span class="lang-zh">探索中国各地区、各民族丰富多彩的文化表达与舞蹈风格。</span>
                         </p>
-                        <a href="#" class="link-arrow">Class details <i class="fas fa-long-arrow-alt-right"></i></a>
+                        <a href="#" class="link-arrow"><span class="lang-en">Class details <i class="fas fa-long-arrow-alt-right"></i></span><span class="lang-zh">课程详情 <i class="fas fa-long-arrow-alt-right"></i></span></a>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -136,10 +178,12 @@
                             style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom;">
                     </div>
                     <div class="card-content">
-                        <h3>Youth Programs</h3>
-                        <p>Foundational training designed specifically for younger students to build strength and
-                            coordination.</p>
-                        <a href="#" class="link-arrow">Class details <i class="fas fa-long-arrow-alt-right"></i></a>
+                        <h3><span class="lang-en">Youth Programs</span><span class="lang-zh">青少年课程</span></h3>
+                        <p>
+                            <span class="lang-en">Foundational training designed specifically for younger students to build strength and coordination.</span>
+                            <span class="lang-zh">专为青少年设计的基础训练课程，帮助学生增强体能与协调能力。</span>
+                        </p>
+                        <a href="#" class="link-arrow"><span class="lang-en">Class details <i class="fas fa-long-arrow-alt-right"></i></span><span class="lang-zh">课程详情 <i class="fas fa-long-arrow-alt-right"></i></span></a>
                     </div>
                 </div>
                 <!-- Card 4 -->
@@ -150,9 +194,12 @@
                             style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
                     </div>
                     <div class="card-content">
-                        <h3>Peking Opera</h3>
-                        <p>Experience China's most celebrated theatrical art — a dazzling blend of song, speech, mime, acrobatics, and elaborate costume that has captivated audiences for over 200 years.</p>
-                        <a href="#" class="link-arrow">Class details <i class="fas fa-long-arrow-alt-right"></i></a>
+                        <h3><span class="lang-en">Peking Opera</span><span class="lang-zh">京剧</span></h3>
+                        <p>
+                            <span class="lang-en">Experience China's most celebrated theatrical art — a dazzling blend of song, speech, mime, acrobatics, and elaborate costume that has captivated audiences for over 200 years.</span>
+                            <span class="lang-zh">体验中国最负盛名的舞台艺术——京剧集唱腔、念白、哑剧、杂技与华美服饰于一身，两百余年来令无数观众叹为观止。</span>
+                        </p>
+                        <a href="#" class="link-arrow"><span class="lang-en">Class details <i class="fas fa-long-arrow-alt-right"></i></span><span class="lang-zh">课程详情 <i class="fas fa-long-arrow-alt-right"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -163,8 +210,8 @@
     <section id="performances" class="section">
         <div class="container">
             <div class="section-header center-text scroll-reveal">
-                <h2 class="section-title">Upcoming Performances</h2>
-                <p class="section-subtitle">Join us for our upcoming shows and events</p>
+                <h2 class="section-title"><span class="lang-en">Upcoming Performances</span><span class="lang-zh">即将上演</span></h2>
+                <p class="section-subtitle"><span class="lang-en">Join us for our upcoming shows and events</span><span class="lang-zh">期待您莅临我们的精彩演出</span></p>
             </div>
             <div class="events-grid scroll-reveal">
                 <div class="event-card">
@@ -205,8 +252,8 @@
     <section id="previous-shows" class="section" style="background-color: var(--color-bg-alt);">
         <div class="container">
             <div class="section-header center-text scroll-reveal">
-                <h2 class="section-title">Previous Shows & Events</h2>
-                <p class="section-subtitle">A look back at our past performances and celebrations</p>
+                <h2 class="section-title"><span class="lang-en">Previous Shows & Events</span><span class="lang-zh">往期演出与活动</span></h2>
+                <p class="section-subtitle"><span class="lang-en">A look back at our past performances and celebrations</span><span class="lang-zh">回顾我们精彩纷呈的历届演出</span></p>
             </div>
             <div class="events-grid scroll-reveal">
                 <!-- 2026 CNY Gala -->
@@ -267,21 +314,21 @@
     <section id="donate" class="section donate-section">
         <div class="container">
             <div class="section-header center-text scroll-reveal">
-                <h2 class="section-title">Support Our Mission</h2>
-                <p class="section-subtitle">Your generous donation helps us preserve and promote Chinese performing arts for future generations.</p>
+                <h2 class="section-title"><span class="lang-en">Support Our Mission</span><span class="lang-zh">支持我们的使命</span></h2>
+                <p class="section-subtitle"><span class="lang-en">Your generous donation helps us preserve and promote Chinese performing arts for future generations.</span><span class="lang-zh">您的慷慨捐助将帮助我们为后代传承和推广中国表演艺术。</span></p>
             </div>
             <div class="donate-wrapper scroll-reveal">
                 <div class="donate-info">
-                    <h3>Why Donate?</h3>
+                    <h3><span class="lang-en">Why Donate?</span><span class="lang-zh">为何捐款？</span></h3>
                     <ul class="donate-benefits">
-                        <li><i class="fas fa-check-circle"></i> Support student scholarships</li>
-                        <li><i class="fas fa-check-circle"></i> Fund costumes and performances</li>
-                        <li><i class="fas fa-check-circle"></i> Preserve Chinese cultural heritage</li>
-                        <li><i class="fas fa-check-circle"></i> Help grow our youth programs</li>
+                        <li><i class="fas fa-check-circle"></i><span class="lang-en"> Support student scholarships</span><span class="lang-zh"> 资助学生奖学金</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="lang-en"> Fund costumes and performances</span><span class="lang-zh"> 资助演出服装与演出</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="lang-en"> Preserve Chinese cultural heritage</span><span class="lang-zh"> 保护中华文化遗产</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="lang-en"> Help grow our youth programs</span><span class="lang-zh"> 支持青少年课程发展</span></li>
                     </ul>
                 </div>
                 <div class="donate-form-card">
-                    <h3>Make a Donation</h3>
+                    <h3><span class="lang-en">Make a Donation</span><span class="lang-zh">立即捐款</span></h3>
                     <div class="donation-amounts">
                         <button class="amount-btn" onclick="setAmount(25)">$25</button>
                         <button class="amount-btn" onclick="setAmount(50)">$50</button>
@@ -356,17 +403,17 @@
                 </div>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h4><span class="lang-en">Quick Links</span><span class="lang-zh">快速导航</span></h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#classes">Programs & Classes</a></li>
-                    <li><a href="#performances">Performances</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+                    <li><a href="#about"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a></li>
+                    <li><a href="#classes"><span class="lang-en">Programs & Classes</span><span class="lang-zh">课程与项目</span></a></li>
+                    <li><a href="#performances"><span class="lang-en">Performances</span><span class="lang-zh">演出</span></a></li>
+                    <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact Info</h4>
+                <h4><span class="lang-en">Contact Info</span><span class="lang-zh">联系方式</span></h4>
                 <ul class="contact-info">
                     <li><i class="fas fa-map-marker-alt"></i> 4848 Union Center Pavilion Dr, West Chester, OH 45069</li>
                     <li><i class="fas fa-phone"></i> (513) 304-9697</li>
@@ -376,7 +423,7 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 Bing Yang Chinese Performing Art Center. All Rights Reserved.</p>
+                <p><span class="lang-en">&copy; 2026 Bing Yang Chinese Performing Art Center. All Rights Reserved.</span><span class="lang-zh">&copy; 2026 冰扬中国表演艺术中心. 版权所有。</span></p>
             </div>
         </div>
     </footer>
